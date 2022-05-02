@@ -3,7 +3,6 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
-const SocketServer = require('./socketServer')
 const { ExpressPeerServer } = require('peer')
 const path = require('path')
 
@@ -28,6 +27,10 @@ mongoose.connect(URI, {
     if(err) throw err;
     console.log('Connected to mongodb')
 })
+
+app.get('/', (req, res) => {
+    res.sendFile(path.resolve('pages/index.html')
+});
 
 const port = process.env.PORT || 5000
 http.listen(port, () => {
