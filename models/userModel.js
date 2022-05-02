@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    avatar: {
+        type: String,
+        default: 'https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png'
+    }
     mobile: {type: String, default: ''},
     gender: {type: String, default: 'male'},
     referrer: [{type: mongoose.Types.ObjectId, ref: 'user'}],
